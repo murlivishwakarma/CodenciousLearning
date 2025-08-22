@@ -1,0 +1,29 @@
+class Solution {
+    private int cnt;
+      void fun(int n,int src,int aux,int dest){
+            
+            if(n==1){
+                return;
+            }
+              
+            
+            fun(n-1,src,dest,aux);
+            cnt++;
+            fun(1,src,aux,dest);
+            cnt++;
+            fun(n-1,aux,src,dest);
+            
+            
+      }
+    
+    public int towerOfHanoi(int n, int from, int to, int aux) {
+        // code here
+        
+        cnt =1;
+        
+          fun(n,from,aux,to);
+          
+          return cnt;
+        
+    }
+}
